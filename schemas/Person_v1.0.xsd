@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		targetNamespace="http://zendron.com.br/manage/person"
+		xmlns:tns="http://zendron.com.br/manage/person"
+		elementFormDefault="qualified" 
+		version="1.0">
+
+	<complexType name="Person">
+		<sequence>
+			<element name="id" type="integer" />
+			<element name="firstName" type="string" />
+			<element name="lastName" type="string" />
+			<element name="birthDate" type="date" />
+			<element name="gender" type="tns:Gender" />
+		</sequence>
+	</complexType>
+	
+	<simpleType name="Gender">
+		<restriction>
+			<enumeration value="man" />
+			<enumeration value="women" />
+		</restriction>
+	</simpleType>
+	
+	<element name="person" type="tns:Person" />
+
+</schema>

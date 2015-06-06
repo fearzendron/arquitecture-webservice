@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		targetNamespace="http://zendron.com.br/manage/project"
+		xmlns:tns="http://zendron.com.br/manage/project"
+		elementFormDefault="qualified" 
+		version="1.0">
+
+	<complexType name="Project">
+		<sequence>
+			<element name="id" type="integer" />
+			<element name="name" type="string" />
+			<element name="dateCreated" type="date" />
+			<element name="dueDate" type="date" />
+			<element name="status" type="tns:Status" />
+		</sequence>
+	</complexType>
+
+	<simpleType name="Status">
+		<restriction>
+			<enumeration value="active" />
+			<enumeration value="inactive" />
+		</restriction>
+	</simpleType>
+
+	<element name="project" type="tns:Project" />
+
+</schema>
+
